@@ -20,16 +20,18 @@ public 	ClientRest()
 }
 
 public String getHello() throws UniformInterfaceException
-{WebResource resource=webResource;
+{
+WebResource resource=webResource;
 resource=resource.
-		 path(MessageFormat.format("hello", new 
-				 Object[] {}));
+path(MessageFormat.format("hello", new 
+				Object[]{}));
 	return resource.accept(MediaType.TEXT_PLAIN).get(String.class);
 }
 
 //WebService 01
 public String getCustomerInfo(String cust_name) throws UniformInterfaceException
-{WebResource resource=webResource;
+{
+	WebResource resource=webResource;
 resource=resource.
 		 path(MessageFormat.format("cust/{0}", new 
 				 Object[] {cust_name}));
@@ -38,7 +40,8 @@ resource=resource.
 
 //WebService 02
 public String getCustomerInfoOnState(String cust_state) throws UniformInterfaceException
-{WebResource resource=webResource;
+{
+	WebResource resource=webResource;
 resource=resource.
 		 path(MessageFormat.format("custonstate/{0}", new 
 				 Object[] {cust_state}));
