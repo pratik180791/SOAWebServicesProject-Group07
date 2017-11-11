@@ -100,10 +100,10 @@ pw.println("<br>"+cr.getTransactionsDetailsInfo(s_ws04_transaction_date));
 		pw.println("<br>"+cr.getFirstNameWiseEmployees(s_ws08_emp_fname));
 		}
 		
-		//if(request.getParameter("ws09_get_pricings_info")!=null)
-		//{
-		//pw.println("<br>"+cr.getPricingsInfo());
-		//}
+		if(request.getParameter("ws09_get_pricings_info")!=null)
+		{
+		pw.println("<br>"+cr.getPricingsInfo());
+		}
 	
 		if(s_ws10_payment_date!=null && !s_ws10_payment_date.isEmpty())
 		{
@@ -130,15 +130,15 @@ pw.println("<br>"+cr.getTransactionsDetailsInfo(s_ws04_transaction_date));
 		pw.println("<br>"+cr.getEmployeeWiseInfo(s_ws14_emp_name));
 		}
 		
-		//if(request.getParameter("ws15_get_Invoice_Amounts")!=null)
-		//{
-		//pw.println("<br>"+cr.getOrderInvoiceAmount());
-		//}
+		if(request.getParameter("ws15_get_Invoice_Amounts")!=null)
+		{
+		pw.println("<br>"+cr.getOrderInvoiceAmount());
+		}
 		
-		//if(request.getParameter("ws16_get_title_wise_counts")!=null)
-		//{
-		//pw.println("<br>"+cr.getTitleWiseCount());
-		//}
+		if(request.getParameter("ws16_get_title_wise_counts")!=null)
+		{
+		pw.println("<br>"+cr.getTitleWiseCount());
+		}
 		
 		if(s_ws17_get_zip!=null && !s_ws17_get_zip.isEmpty())
 		{
@@ -155,10 +155,10 @@ pw.println("<br>"+cr.getTransactionsDetailsInfo(s_ws04_transaction_date));
 		pw.println("<br>"+cr.getCommentsDetails(s_ws19_comment_id));
 		}
 		
-		//if(request.getParameter("ws20_get_allComments")!=null)
-		//{
-		//pw.println("<br>"+cr.getAllComments());
-		//}
+		if(request.getParameter("ws20_get_allComments")!=null)
+		{
+		pw.println("<br>"+cr.getAllComments());
+		}
 	}
 	catch(Exception e)
 	{
