@@ -1,6 +1,7 @@
 package myws;
 import java.sql.Connection;
 
+
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -13,7 +14,7 @@ import myws.ConnectionClass;
 public class FirstWebService
 {
 
-	ConnectionClass conn= new ConnectionClass();
+	ConnectionClass conn;
 	
 	
 	@GET
@@ -31,12 +32,14 @@ public class FirstWebService
 	public String getCustomerOnName(@PathParam("Cust_name")String Cust_name)
 	 {
 		 Statement stmt;
-		 String result="Customer Information on Name";
+		 conn= new ConnectionClass();
+		 String result="Customer Information on Name Pratik";
 		 String sql="select Cust_name,business_type,cust_add from customers where Cust_name='"+Cust_name+"'";
 		 try {
 			
 			stmt=conn.getConnection().createStatement();
 			ResultSet rs=stmt.executeQuery(sql);
+			result.concat("Cust_name");
 			while(rs.next())
 			{
 				result=result.concat(rs.getString("Cust_name")+" "+rs.getString("business_type")+""+rs.getString("cust_add"));
@@ -56,14 +59,14 @@ public class FirstWebService
 	
 	//Web Service:02
 	@GET
-	@Path("custonstate/{Cust_State}")
+	@Path("custonstate/{CustState}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String getCustomerOnState(@PathParam("Cust_State")String Cust_State)
+	public String getCustomerOnState(@PathParam("CustState")String CustState)
 	 {
 	 
 		 Statement stmt;
 		 String result="Customers state wise";
-		 String sql="select Cust_Name,Cust_State from customers where Cust_state='"+Cust_State+"'";
+		 String sql="select Cust_Name,Cust_State from customers where Cust_state='"+CustState+"'";
 		 try {
 			conn.getConnection();
 			stmt=conn.getConnection().createStatement();
@@ -87,13 +90,13 @@ public class FirstWebService
 	
 	//WebService 03
 	@GET
-	@Path("custaddress/{Cust_Name}")
+	@Path("custaddress/{CustName}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String getCustomerAddress(@PathParam("Cust_Name")String Cust_Name)
+	public String getCustomerAddress(@PathParam("CustName")String CustName)
 	 {
 		 Statement stmt;
 		 String result="Customer Information";
-		 String sql="select Cust_Name, Cust_Add from customers where Cust_Name='"+Cust_Name+"'";
+		 String sql="select Cust_Name, Cust_Add from customers where Cust_Name='"+CustName+"'";
 		 try {
 			conn.getConnection();
 			stmt=conn.getConnection().createStatement();

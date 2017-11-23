@@ -9,12 +9,12 @@ public class ConnectionClass {
 
          //   String driver = "com.mysql.cj.jdbc.Driver";
 
-            String url = "jdbc:mysql://localhost:3306/TestDB";
+            String url = "jdbc:mysql://127.0.0.1:3306/TestDB";
             String username = "root";
             String password = "root";
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/test?"+"user=root&password=root");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test?"+"user=root&password=root");
             System.out.println("Connection Established");
 
             return conn;
